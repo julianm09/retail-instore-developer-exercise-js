@@ -24,6 +24,21 @@ window.addEventListener("resize", () => {
   moveIndicator(selected);
 });
 
+//handle tab key focus
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Tab") {
+    //reset color to grey
+    document
+      .querySelectorAll(".nav-link")
+      .forEach((x) => (x.style.outline = "none"));
+
+    setTimeout(() => {
+      const active = document.activeElement;
+      active.style.outline = `4px solid #66B1FC`;
+    }, 1);
+  }
+});
+
 //get all cities and create links
 const createLinks = async () => {
   await fetch("./navigation.json")
