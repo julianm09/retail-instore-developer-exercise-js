@@ -8,7 +8,7 @@ body {
 :root {
   --link-color: #8d8d8d;
   --link-active: #000000;
-  --highlight-color: #0066CC;
+  --highlight-color: #0066cc;
   --border-color: #dddddd;
 }
 
@@ -42,6 +42,10 @@ body {
   white-space: nowrap;
   color: var(--link-color);
   text-decoration: none;
+}
+
+.nav-link {
+  outline: none;
 }
 
 #indicator {
