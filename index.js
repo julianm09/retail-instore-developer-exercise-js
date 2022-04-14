@@ -6,7 +6,7 @@ const clock = document.getElementById("clock");
 const colors = {
   linkColor: "#8d8d8d",
   activeColor: "#000000",
-  highlightColor: "#3071aa",
+  highlightColor: "#0066CC",
   borderColor: "#dddddd",
 };
 
