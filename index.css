@@ -16,6 +16,8 @@ body {
 #nav {
   display: flex;
   position: relative;
+  padding: 0 60px;
+  justify-content: center;
 }
 
 #select {
@@ -37,6 +39,7 @@ body {
 
 .nav-link {
   cursor: pointer;
-  margin: 0 40px;
-  font-size: 16px;
+  margin: 0 2vw;
+  font-size: calc(16px);
+  white-space: nowrap;
 }
