@@ -88,9 +88,10 @@ const handleSelectLink = (e) => {
   selected = e;
 
   //reset color to grey
-  document
-    .querySelectorAll(".nav-link")
-    .forEach((x) => (x.style.color = colors.linkColor));
+  document.querySelectorAll(".nav-link").forEach((x) => {
+    x.style.color = colors.linkColor;
+    x.style.outline = "none";
+  });
   e.style.color = colors.activeColor;
 
   //get new location and time
