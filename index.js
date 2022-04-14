@@ -77,6 +77,7 @@ const handleSelectLink = (e) => {
     .querySelectorAll(".nav-link")
     .forEach((x) => (x.style.color = colors.linkColor));
   e.style.color = colors.activeColor;
+  e.style.outline = "none"
 
   //get new location and time
   getLocation();
