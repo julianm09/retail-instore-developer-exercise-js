@@ -4,6 +4,13 @@ body {
   margin: 0;
 }
 
+:root {
+  --link-color: #8d8d8d;
+  --link-active: #000000;
+  --highlight-color: #3071aa;
+  --border-color: #dddddd;
+}
+
 #app {
   width: 100%;
   min-height: 100vh;
@@ -24,18 +31,23 @@ body {
 }
 
 .nav-link {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   cursor: pointer;
   margin: 0 2vw;
   font-size: calc(16px);
   white-space: nowrap;
-  color: #8d8d8d;
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 #indicator {
   position: absolute;
   height: 1px;
   width: 0;
-  background: #000;
+  background: var(--link-active);
   bottom: -12px;
   transition: 0.4s ease;
 }
@@ -44,7 +56,7 @@ body {
   position: absolute;
   height: 1px;
   width: 100%;
-  background: #dddddd;
+  background: var(--border-color);
   bottom: -12px;
 }
 
@@ -60,6 +72,6 @@ body {
 }
 
 .highlight {
-  color: #3071aa;
+  color: var(--highlight-color);
   width: 100px;
 }
