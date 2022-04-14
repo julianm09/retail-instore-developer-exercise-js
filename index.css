@@ -1,0 +1,45 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+
+#nav {
+  display: flex;
+  position: relative;
+  padding: 0 60px;
+  justify-content: center;
+}
+
+#select {
+  position: absolute;
+  height: 1px;
+  width: 0;
+  background: #000;
+  bottom: -12px;
+  transition: 0.2s ease;
+}
+
+#line-select {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: #dddddd;
+  bottom: -12px;
+}
+
+.nav-link {
+  cursor: pointer;
+  margin: 0 2vw;
+  font-size: calc(16px);
+  white-space: nowrap;
+}
