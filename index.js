@@ -3,6 +3,13 @@ const nav = document.getElementById("nav");
 const indicator = document.getElementById("indicator");
 const clock = document.getElementById("clock");
 
+const colors = {
+  linkColor: "#8d8d8d",
+  activeColor: "#000000",
+  highlightColor: "#3071aa",
+  borderColor: "#dddddd",
+};
+
 // create navigation on load
 window.onload = () => {
   createLinks();
@@ -28,22 +35,24 @@ const createLinks = async () => {
         link.id = x.section;
         link.classList.add("nav-link");
         link.innerHTML = x.label;
-        link.tabIndex = 0;
+        link.href = `#${x.section}`;
 
         //add event listeners
         link.addEventListener("click", (e) => handleSelectLink(e.target));
+        link.addEventListener("mouseenter", (e) => handleMouseEnter(e.target));
+        link.addEventListener("mouseout", (e) => handleMouseOut(e.target));
         link.addEventListener(
           "keypress",
           (e) => e.key === "Enter" && handleSelectLink(e.target)
         );
-        link.addEventListener("mouseenter", (e) => handleMouseEnter(e.target));
-        link.addEventListener("mouseout", (e) => handleMouseOut(e.target));
+
+        //create link
         nav.appendChild(link);
 
         //initialize styling for selected link
         if (i == 0) {
           selected = document.getElementById(x.section);
-          selected.style.color = "black";
+          selected.style.color = colors.activeColor;
           moveIndicator(selected);
           getLocation();
         }
@@ -66,8 +75,8 @@ const handleSelectLink = (e) => {
   //reset color to grey
   document
     .querySelectorAll(".nav-link")
-    .forEach((x) => (x.style.color = "#8D8D8D"));
-  e.style.color = "black";
+    .forEach((x) => (x.style.color = colors.linkColor));
+  e.style.color = colors.activeColor;
 
   //get new location and time
   getLocation();
@@ -76,7 +85,7 @@ const handleSelectLink = (e) => {
 //change color on hover
 const handleMouseEnter = (e) => {
   if (selected == null || selected.id !== e.id) {
-    e.style.color = "#3071AA";
+    e.style.color = colors.highlightColor;
   }
 };
 
@@ -84,9 +93,9 @@ const handleMouseEnter = (e) => {
 const handleMouseOut = (e) => {
   const indicatorStyle = e.style;
   if (selected.id == e.id) {
-    indicatorStyle.color = "black";
+    indicatorStyle.color = colors.activeColor;
   } else {
-    indicatorStyle.color = "#8D8D8D";
+    indicatorStyle.color = colors.linkColor;
   }
 };
 
@@ -123,6 +132,6 @@ function updateClock() {
     timestyle: "full",
     hourCycle: "h24",
   });
-  
+
   clock.innerHTML = `It is \u00A0 <span class="highlight">${time}</span> \u00A0 in ${selected.innerHTML}`;
 }
