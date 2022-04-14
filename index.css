@@ -14,6 +14,8 @@ body {
   flex-direction: column;
 }
 
+/* navigation */
+
 #nav {
   display: flex;
   position: relative;
@@ -35,7 +37,7 @@ body {
   width: 0;
   background: #000;
   bottom: -12px;
-  transition: 0.2s ease;
+  transition: 0.4s ease;
 }
 
 #border {
@@ -46,6 +48,8 @@ body {
   bottom: -12px;
 }
 
+/* clock */
+
 #clock {
   position: relative;
   top: 100px;
@@ -53,4 +57,9 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 24px;
+}
+
+.highlight {
+  color: #3071aa;
+  width: 100px;
 }
